@@ -1,34 +1,53 @@
+import { supabase } from "./supabase.js";
 
-// Variable global donde guardaremos los juegos
 let gamesData = [];
-// Función que carga los juegos desde el archivo JSON
+
 async function loadGames() {
-    const response = await fetch('data/games.json');
-    gamesData = await response.json();
+    const { data, error } = await supabase
+        .from('juegos')
+        .select('*')
+        .order('nombre', { ascending: true });
+
+    if (error) {
+        console.error('Error al cargar los juegos:', error.message);
+        return [];  
+    }
+
+    gamesData = data;
     return gamesData;
 }
 
+
+async function changeGameStatus(id, newStatus) {
+  const updates = { estado: newStatus };
+
+  if (newStatus === 'en-progreso') {
+    updates.fecha_inicio = getTodayDate();
+    updates.fecha_completado = null;
+  } else if (newStatus === 'completado') {
+    updates.fecha_completado = getTodayDate();
+  } else {
+    updates.fecha_inicio = null;
+    updates.fecha_completado = null;
+  }
+
+  const { error } = await supabase
+    .from('juegos')
+    .update(updates)
+    .eq('id', id);
+
+  if (error) {
+    console.error('Error al actualizar:', error.message);
+    return;
+  }
+
+  // Refrescar datos locales
+  await loadGames();
+  
+}
+
 function getTodayDate() {
-    return new Date().toISOString().split('T')[0];
+  return new Date().toISOString().split('T')[0];
 }
 
-function changeGameStatus(index, newStatus) {
-    gamesData[index].estado = newStatus;
-    if (newStatus === 'en-progreso') {
-        gamesData[index].fecha_inicio = getTodayDate();
-        if (!gamesData[index].fecha_completado) {
-            gamesData[index].fecha_completado = null;
-        }
-    } else if (newStatus === 'completado') {
-        gamesData[index].fecha_completado = getTodayDate();
-    } else {
-        gamesData[index].fecha_inicio = null;
-        gamesData[index].fecha_completado = null;
-    }
-    saveGames();
-}
-
-function saveGames() {
-    localStorage.setItem('gamesData', JSON.stringify(gamesData));
-}
-
+ export { gamesData, loadGames, changeGameStatus, getTodayDate }   

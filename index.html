@@ -95,15 +95,15 @@
                     <div class="stat-number" id="total-games">0</div>
                     <div class="stat-label">Juegos Totales</div>
                 </div>
-                <div class="stat-card">
+                <div class="stat-card" data-filter="pendiente" style="cursor: pointer;">
                     <div class="stat-number" id="pending-games">555</div>
                     <div class="stat-label">Pendientes</div>
                 </div>
-                <div class="stat-card">
+                <div class="stat-card" data-filter="en-progreso" style="cursor: pointer;">
                     <div class="stat-number" id="in-progress-games">0</div>
                     <div class="stat-label">En Progreso</div>
                 </div>
-                <div class="stat-card">
+                <div class="stat-card" data-filter="completado" style="cursor: pointer;">
                     <div class="stat-number" id="completed-games">0</div>
                     <div class="stat-label">Completados</div>
                 </div>
@@ -121,7 +121,8 @@
         </div>
     </main>
 
-    <script src="js/games.js"></script>
-    <script src="js/app.js"></script>
+    <script type="module" src="js/games.js"></script>
+    <script type="module" src="js/app.js"></script>
+    
 </body>
 </html> 

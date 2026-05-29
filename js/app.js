@@ -5,6 +5,8 @@ let currentFilter = 'todos';
 let currentCategory = null;
 let searchTerm = '';
 
+import { gamesData, loadGames, changeGameStatus } from './games.js';
+
 // Renderizar tarjetas de juegos mejoradas
 function renderGames() {
     const container = document.getElementById('games-list');
@@ -39,7 +41,8 @@ function renderGames() {
     }
     
     const gamesHTML = filteredGames.map(game => {
-        const actualIndex = gamesData.indexOf(game);
+        
+        
         const hoursMax = 100;
         const hoursPercent = Math.min((game.horas / hoursMax) * 100, 100);
         
@@ -60,9 +63,9 @@ function renderGames() {
                                 ${game.estado === 'pendiente' ? '📋 Pendiente' : game.estado === 'en-progreso' ? '▶️ En progreso' : '✅ Completado'}
                             </span>
                             <div class="status-buttons">
-                                <button class="status-btn ${game.estado === 'pendiente' ? 'active' : ''}" data-index="${actualIndex}" data-status="pendiente">📋</button>
-                                <button class="status-btn ${game.estado === 'en-progreso' ? 'active' : ''}" data-index="${actualIndex}" data-status="en-progreso">▶️</button>
-                                <button class="status-btn ${game.estado === 'completado' ? 'active' : ''}" data-index="${actualIndex}" data-status="completado">✅</button>
+                            <button class="status-btn ${game.estado === 'en-progreso' ? 'active' : ''}" data-id="${game.id}" data-status="en-progreso">▶️</button>
+                            <button class="status-btn ${game.estado === 'pendiente' ? 'active' : ''}" data-id="${game.id}" data-status="pendiente">📋</button>
+                            <button class="status-btn ${game.estado === 'completado' ? 'active' : ''}" data-id="${game.id}" data-status="completado">✅</button>
                             </div>
                         </div>
                     </div>
@@ -105,36 +108,48 @@ function updateStats() {
     document.getElementById('total-hours').textContent = totalHours;
 }
 
-// Manejar clics en elementos de navegación (filtros)
+/* ============================================================
+   setFilter(filter) - función central para cambiar filtro
+   Se llama desde el sidebar o desde las stats cards.
+   Recibe el nombre del filtro: 'todos', 'pendiente', etc.
+   ============================================================ */
+function setFilter(filter) {
+    currentFilter = filter;
+    currentCategory = null;
+
+    // Quitar active de todos, luego marcar el que corresponde
+    document.querySelectorAll('[data-filter], [data-category]').forEach(el => el.classList.remove('active'));
+
+    // Marcar tanto en sidebar como en stats cards
+    document.querySelectorAll(`[data-filter="${filter}"]`).forEach(el => el.classList.add('active'));
+
+    renderGames();
+    closeSidebarMobile();
+}
+
 function setupNavigation() {
-    // Filtros de estado
-    document.querySelectorAll('[data-filter]').forEach(btn => {
-        btn.addEventListener('click', () => {
-            currentFilter = btn.dataset.filter;
-            currentCategory = null;
-            
-            // Actualizar activos
-            document.querySelectorAll('[data-filter], [data-category]').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            
-            renderGames();
-            closeSidebarMobile();
-        });
+    // Click en filtros del sidebar
+    document.querySelectorAll('.sidebar-nav [data-filter]').forEach(btn => {
+        btn.addEventListener('click', () => setFilter(btn.dataset.filter));
     });
-    
-    // Filtros de categoría
+
+    // Click en filtros de categoría del sidebar
     document.querySelectorAll('[data-category]').forEach(btn => {
         btn.addEventListener('click', () => {
             currentCategory = btn.dataset.category;
             currentFilter = 'todos';
-            
-            // Actualizar activos
-            document.querySelectorAll('[data-filter], [data-category]').forEach(b => b.classList.remove('active'));
+
+            document.querySelectorAll('[data-filter], [data-category]').forEach(el => el.classList.remove('active'));
             btn.classList.add('active');
-            
+
             renderGames();
             closeSidebarMobile();
         });
+    });
+
+    // Click en las stats cards (Pendientes, En Progreso, Completados)
+    document.querySelectorAll('.stats-container [data-filter]').forEach(card => {
+        card.addEventListener('click', () => setFilter(card.dataset.filter));
     });
 }
 
@@ -177,12 +192,15 @@ async function init() {
 // Ejecutar cuando el HTML esté listo
 document.addEventListener('DOMContentLoaded', init); 
 
-document.getElementById('games-list').addEventListener('click', (e) => {
+document.getElementById('games-list').addEventListener('click', async (e) => {
     if (e.target.classList.contains('status-btn')) {
-        const index = parseInt(e.target.dataset.index);
+        const id = parseInt(e.target.dataset.id);
         const newStatus = e.target.dataset.status;
-        changeGameStatus(index, newStatus);
+        await changeGameStatus(id, newStatus);
         updateStats();
         renderGames();
     }
+
+ 
+
 });
