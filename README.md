@@ -1,51 +1,59 @@
+# Backlog Picker — Steam
 
-# Backlog personal
+Gestor visual de backlog de videojuegos con portadas de Steam, persistencia en Supabase y diseño Frutiger Aero.
 
-Lista de juegos pendientes por completar, con horas estimadas para un **jugador promedio** (sin rush, con algo de contenido secundario pero sin ir al 100%).
+## Stack
 
-## Estructura de cada entrada
+- HTML + CSS + JavaScript (vanilla)
+- [Supabase](https://supabase.com) — base de datos y persistencia
+- [Steam Store API](https://partner.steamgames.com/doc/store) — portadas de juegos
+- Desplegado en **Netlify**
 
-| Campo | Tipo | Descripción |
+## Funcionalidades
+
+- **Sidebar colapsable** con filtros por estado (Todos / Pendientes / En Progreso / Completados)
+- **Filtros por categoría** (Corto <10h / Medio 10-30h / Largo >30h)
+- **Búsqueda en tiempo real** por nombre de juego
+- **Cards con portada** de Steam, badges de estado, barra de horas y fechas
+- **Cambio de estado** con un click: Pendiente → En Progreso → Completado (fechas se registran automáticamente)
+- **Stats dashboard** con totales, clicleables para filtrar
+- **Orden alfabético** por defecto; **orden por horas** cuando se filtra por categoría
+- **Persistencia en Supabase** — los cambios sobreviven al refresh
+
+## Diseño
+
+Paleta Frutiger Aero con tonos verdes, glassmorphism (fondos translúcidos con blur) y sombras suaves.
+
+## Cómo agregar un juego
+
+1. Ve a [Supabase Dashboard](https://supabase.com) → Table Editor → tabla `juegos`
+2. Click **Insert row** y completa los campos:
+
+| Campo | Tipo | Ejemplo |
 |---|---|---|
-| `nombre` | string | Nombre del juego |
-| `horas` | number | Horas estimadas para un jugador promedio |
-| `categoria` | string | Clasificación por duración (ver abajo) |
-| `estado` | string | Estado actual del juego |
-| `fecha_inicio` | string \| null | Fecha en que se empezó a jugar |
-| `fecha_completado` | string \| null | Fecha en que se completó |
-| `appid` | number | ID del juego en Steam |
-| `imagen` | string | URL de la portada (formato 600x900) |
+| `nombre` | text | `Silent Hill f` |
+| `horas` | int4 | `17` |
+| `categoria` | text | `medio` |
+| `estado` | text | `pendiente` |
+| `appid` | int4 | `` |
+| `imagen` | text | `https://shared.akamai.steamstatic.com/...` |
 
-## Categorías
+Los campos `fecha_inicio`, `fecha_completado` y `created_at` se gestionan automáticamente.
 
-| Categoría | Rango de horas |
-|---|---|
-| `corto` | hasta ~11h |
-| `medio` | 12h – 24h |
-| `largo` | 25h o más |
+## Cómo obtener el AppID y portada de un juego
 
-## Estados posibles
+1. Busca el juego en la tienda de Steam
+2. La URL tiene el formato `store.steampowered.com/app/APPID/`
+3. La portada (600x900) se genera como `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/APPID/library_600x900_2x.jpg`
 
-- `pendiente` — aún no iniciado
-- `en progreso` — actualmente jugando
-- `completado` — historia principal terminada
-
-## Fuente de las horas
-
-Las horas se basan en datos de [HowLongToBeat](https://howlongtobeat.com) y comunidades de Steam, representando el tiempo estimado para un jugador promedio que **no hace rush** pero **tampoco busca el 100%**.
-
-## Cómo agregar o modificar juegos
-
-Este archivo es consumido por una página estática alojada en Netlify. Para realizar cambios:
-
-1. Clona el repositorio en local
-2. Edita `games.json` con los cambios deseados
-3. Haz commit y push a la rama principal
+## Desarrollo local
 
 ```bash
-git add games.json
-git commit -m "feat: agregar/actualizar juegos"
-git push
+python -m http.server 3000
+# Abrir http://localhost:3000
 ```
 
-Netlify detectará el push automáticamente y redespliegará el sitio.
+## Notas
+
+- `games.json` contiene el seed inicial; ya no se usa en producción
+- Las credenciales de Supabase son públicas (anon key), protegidas por Row Level Security
