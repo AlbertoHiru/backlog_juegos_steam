@@ -38,7 +38,8 @@ function renderGames() {
         return;
     }
     
-    const gamesHTML = filteredGames.map((game, index) => {
+    const gamesHTML = filteredGames.map(game => {
+        const actualIndex = gamesData.indexOf(game);
         const hoursMax = 100;
         const hoursPercent = Math.min((game.horas / hoursMax) * 100, 100);
         
@@ -59,9 +60,9 @@ function renderGames() {
                                 ${game.estado === 'pendiente' ? '📋 Pendiente' : game.estado === 'en-progreso' ? '▶️ En progreso' : '✅ Completado'}
                             </span>
                             <div class="status-buttons">
-                                <button class="status-btn ${game.estado === 'pendiente' ? 'active' : ''}" data-index="${index}" data-status="pendiente">📋</button>
-                                <button class="status-btn ${game.estado === 'en-progreso' ? 'active' : ''}" data-index="${index}" data-status="en-progreso">▶️</button>
-                                <button class="status-btn ${game.estado === 'completado' ? 'active' : ''}" data-index="${index}" data-status="completado">✅</button>
+                                <button class="status-btn ${game.estado === 'pendiente' ? 'active' : ''}" data-index="${actualIndex}" data-status="pendiente">📋</button>
+                                <button class="status-btn ${game.estado === 'en-progreso' ? 'active' : ''}" data-index="${actualIndex}" data-status="en-progreso">▶️</button>
+                                <button class="status-btn ${game.estado === 'completado' ? 'active' : ''}" data-index="${actualIndex}" data-status="completado">✅</button>
                             </div>
                         </div>
                     </div>
