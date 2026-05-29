@@ -1,6 +1,6 @@
-# Backlog Picker — Steam
+# Backlog!
 
-Gestor visual de backlog de videojuegos con portadas de Steam, persistencia en Supabase y diseño Frutiger Aero.
+Gestor visual de backlog de videojuegos con portadas de Steam y  persistencia en Supabase
 
 ## Stack
 
@@ -20,9 +20,6 @@ Gestor visual de backlog de videojuegos con portadas de Steam, persistencia en S
 - **Orden alfabético** por defecto; **orden por horas** cuando se filtra por categoría
 - **Persistencia en Supabase** — los cambios sobreviven al refresh
 
-## Diseño
-
-Paleta Frutiger Aero con tonos verdes, glassmorphism (fondos translúcidos con blur) y sombras suaves.
 
 ## Cómo agregar un juego
 
