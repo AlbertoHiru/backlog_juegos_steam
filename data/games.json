@@ -1,0 +1,252 @@
+[
+  {
+    "nombre": "Alien: Isolation",
+    "horas": 20,
+    "categoria": "medio",
+    "estado": "pendiente",
+    "fecha_inicio": null,
+    "fecha_completado": null,
+    "appid": 214490,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/214490/library_600x900_2x.jpg"
+  },
+  {
+    "nombre": "Hi-Fi RUSH",
+    "horas": 10,
+    "categoria": "corto",
+    "estado": "pendiente",
+    "fecha_inicio": null,
+    "fecha_completado": null,
+    "appid": 1817230,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1817230/library_600x900_2x.jpg"
+  },
+  {
+    "nombre": "Celeste",
+    "horas": 8,
+    "categoria": "corto",
+    "estado": "pendiente",
+    "fecha_inicio": null,
+    "fecha_completado": null,
+    "appid": 504230,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/504230/library_600x900_2x.jpg"
+  },
+  {
+    "nombre": "Half-Life",
+    "horas": 10,
+    "categoria": "corto",
+    "estado": "pendiente",
+    "fecha_inicio": null,
+    "fecha_completado": null,
+    "appid": 70,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/70/library_600x900_2x.jpg"
+  },
+  {
+    "nombre": "Metro 2033 Redux",
+    "horas": 10,
+    "categoria": "corto",
+    "estado": "pendiente",
+    "fecha_inicio": null,
+    "fecha_completado": null,
+    "appid": 286690,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/286690/library_600x900_2x.jpg"
+  },
+  {
+    "nombre": "Metro: Last Light Complete Ed.",
+    "horas": 11,
+    "categoria": "corto",
+    "estado": "pendiente",
+    "fecha_inicio": null,
+    "fecha_completado": null,
+    "appid": 287390,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/287390/library_600x900_2x.jpg"
+  },
+  {
+    "nombre": "Mafia II: Edición Definitiva",
+    "horas": 11,
+    "categoria": "corto",
+    "estado": "pendiente",
+    "fecha_inicio": null,
+    "fecha_completado": null,
+    "appid": 1030830,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1030830/library_600x900_2x.jpg"
+  },
+  {
+    "nombre": "Tomb Raider: Anniversary",
+    "horas": 11,
+    "categoria": "corto",
+    "estado": "pendiente",
+    "fecha_inicio": null,
+    "fecha_completado": null,
+    "appid": 8000,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/8000/library_600x900_2x.jpg"
+  },
+  {
+    "nombre": "Half-Life 2",
+    "horas": 13,
+    "categoria": "medio",
+    "estado": "pendiente",
+    "fecha_inicio": null,
+    "fecha_completado": null,
+    "appid": 220,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/220/library_600x900_2x.jpg"
+  },
+  {
+    "nombre": "Tomb Raider (2013)",
+    "horas": 13,
+    "categoria": "medio",
+    "estado": "pendiente",
+    "fecha_inicio": null,
+    "fecha_completado": null,
+    "appid": 203160,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/203160/library_600x900_2x.jpg"
+  },
+  {
+    "nombre": "Resident Evil Revelations 2",
+    "horas": 11,
+    "categoria": "medio",
+    "estado": "pendiente",
+    "fecha_inicio": null,
+    "fecha_completado": null,
+    "appid": 287290,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/287290/library_600x900_2x.jpg"
+  },
+  {
+    "nombre": "Batman: Arkham City GOTY",
+    "horas": 14,
+    "categoria": "medio",
+    "estado": "pendiente",
+    "fecha_inicio": null,
+    "fecha_completado": null,
+    "appid": 200260,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/200260/library_600x900_2x.jpg"
+  },
+  {
+    "nombre": "Batman: Arkham Origins",
+    "horas": 14,
+    "categoria": "medio",
+    "estado": "pendiente",
+    "fecha_inicio": null,
+    "fecha_completado": null,
+    "appid": 209000,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/209000/library_600x900_2x.jpg"
+  },
+  {
+    "nombre": "RoboCop: Rogue City",
+    "horas": 17,
+    "categoria": "medio",
+    "estado": "pendiente",
+    "fecha_inicio": null,
+    "fecha_completado": null,
+    "appid": 3743240,
+    "imagen": "https://cdn2.steamgriddb.com/thumb/48901f107c6105f69b6aa84d0a277333.jpg"
+  },
+  {
+    "nombre": "Resident Evil 6",
+    "horas": 20,
+    "categoria": "medio",
+    "estado": "pendiente",
+    "fecha_inicio": null,
+    "fecha_completado": null,
+    "appid": 221040,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/221040/library_600x900_2x.jpg"
+  },
+  {
+    "nombre": "Rise of the Tomb Raider",
+    "horas": 18,
+    "categoria": "medio",
+    "estado": "pendiente",
+    "fecha_inicio": null,
+    "fecha_completado": null,
+    "appid": 391220,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/391220/library_600x900_2x.jpg"
+  },
+  {
+    "nombre": "Detroit: Become Human",
+    "horas": 13,
+    "categoria": "medio",
+    "estado": "pendiente",
+    "fecha_inicio": null,
+    "fecha_completado": null,
+    "appid": 1222140,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1222140/library_600x900_2x.jpg"
+  },
+  {
+    "nombre": "Batman: Arkham Knight",
+    "horas": 16,
+    "categoria": "medio",
+    "estado": "pendiente",
+    "fecha_inicio": null,
+    "fecha_completado": null,
+    "appid": 208650,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/208650/library_600x900_2x.jpg"
+  },
+  {
+    "nombre": "Shadow of the Tomb Raider",
+    "horas": 15,
+    "categoria": "medio",
+    "estado": "pendiente",
+    "fecha_inicio": null,
+    "fecha_completado": null,
+    "appid": 750920,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/750920/library_600x900_2x.jpg"
+  },
+  {
+    "nombre": "Mafia: Edición Definitiva",
+    "horas": 14,
+    "categoria": "medio",
+    "estado": "pendiente",
+    "fecha_inicio": null,
+    "fecha_completado": null,
+    "appid": 1030840,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1030840/library_600x900_2x.jpg"
+  },
+  {
+    "nombre": "Metro Exodus Enhanced Ed.",
+    "horas": 20,
+    "categoria": "medio",
+    "estado": "pendiente",
+    "fecha_inicio": null,
+    "fecha_completado": null,
+    "appid": 412020,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/412020/library_600x900_2x.jpg"
+  },
+  {
+    "nombre": "Mafia III: Definitive Edition",
+    "horas": 20,
+    "categoria": "medio",
+    "estado": "pendiente",
+    "fecha_inicio": null,
+    "fecha_completado": null,
+    "appid": 360430,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/360430/library_600x900_2x.jpg"
+  },
+  {
+    "nombre": "Gotham Knights",
+    "horas": 20,
+    "categoria": "medio",
+    "estado": "pendiente",
+    "fecha_inicio": null,
+    "fecha_completado": null,
+    "appid": 1496790,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1496790/library_600x900_2x.jpg"
+  },
+  {
+    "nombre": "Suicide Squad: Kill the JL",
+    "horas": 12,
+    "categoria": "medio",
+    "estado": "pendiente",
+    "fecha_inicio": null,
+    "fecha_completado": null,
+    "appid": 315210,
+    "imagen": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/315210/library_600x900_2x.jpg"
+  },
+  {
+    "nombre": "Cyberpunk 2077",
+    "horas": 35,
+    "categoria": "largo",
+    "estado": "pendiente",
+    "fecha_inicio": null,
+    "fecha_completado": null,
+    "appid": 1091500,
+    "imagen": "https://cdn2.steamgriddb.com/thumb/2d883da03ea85945ccb60376a12f52b5.jpg"
+  }
+]

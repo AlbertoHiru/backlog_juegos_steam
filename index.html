@@ -1,0 +1,127 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Backlog de Juegos Steam</title>
+    <link rel="icon" type="image/jpeg" href="assets/img/steam.ico">
+    <script src="https://cdn.tailwindcss.com"></script> 
+</head>
+
+<body class="dashboard-body">
+
+    <!-- Sidebar -->
+     
+    <aside id="sidebar" class="sidebar">
+        <div class="sidebar-inner">
+        <div class="sidebar-header">
+            <h2 class="sidebar-title flex items-center gap-2"> 
+                <img src="assets/img/icon.jpg" alt="Icono del backlog" class="w-8 h-8 rounded-md object-cover">
+                BACKLOG
+            </h2> 
+        </div>
+ 
+        <nav class="sidebar-nav">
+            <div class="nav-section">
+                <p class="nav-label">Vista</p>
+                <button class="nav-item active" data-filter="todos">
+                    <span class="nav-icon">📊</span> 
+                    <span>Todos</span>
+                </button>
+                <button class="nav-item" data-filter="pendiente">
+                    <span class="nav-icon">📋</span>
+                    <span>Pendientes</span>
+                </button>
+                <button class="nav-item" data-filter="en-progreso">
+                    <span class="nav-icon">▶️</span>
+                    <span>En Progreso</span>
+                </button>
+                <button class="nav-item" data-filter="completado">
+                    <span class="nav-icon">✅</span>
+                    <span>Completados</span>
+                </button>
+            </div>
+  
+            <div class="nav-section">
+                <p class="nav-label">Categoría</p>
+                <button class="nav-item" data-category="corto">
+                    <span class="nav-icon">⚡</span>
+                    <span>Corto (&lt;10h)</span>
+                </button>
+                <button class="nav-item" data-category="medio">
+                    <span class="nav-icon">🎯</span>
+                    <span>Medio (10-30h)</span>
+                </button>
+                <button class="nav-item" data-category="largo">
+                    <span class="nav-icon">🏆</span>
+                    <span>Largo (&gt;30h)</span>
+                </button>
+            </div>
+        </nav>
+        </div>
+    </aside>
+
+ 
+    
+
+    <!-- Main Content -->
+    <main class="main-content" id="main-content">
+        <!-- Top Bar -->
+        <header class="top-bar">
+            <div class="top-bar-left">
+                <button id="sidebar-toggle" class="menu-btn">☰</button>
+                <h1 class="dashboard-title">MIS JUEGOS PENDIENTES</h1>
+            </div>
+            <div class="top-bar-right">
+                <input 
+                    type="text" 
+                    id="search-input" 
+                    class="search-input" 
+                    placeholder="Buscar juego..."
+                    autocomplete="organization-title"
+                >
+            </div>
+        </header>
+
+        <!-- Content Area -->
+        <div class="content-area">
+            <!-- Stats Cards -->
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-number" id="total-games">0</div>
+                    <div class="stat-label">Juegos Totales</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="pending-games">555</div>
+                    <div class="stat-label">Pendientes</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="in-progress-games">0</div>
+                    <div class="stat-label">En Progreso</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="completed-games">0</div>
+                    <div class="stat-label">Completados</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="total-hours">0</div>
+                    <div class="stat-label">Horas Totales</div>
+                </div>
+            </div>
+
+            <!-- Games Grid -->
+            <div class="games-section">
+                <h2 class="section-title">Tu Backlog</h2>
+                <div id="games-list" class="games-grid"></div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/games.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html> 
