@@ -1,5 +1,5 @@
 
-#Backlog personal
+# Backlog personal
 
 Lista de juegos pendientes por completar, con horas estimadas para un **jugador promedio** (sin rush, con algo de contenido secundario pero sin ir al 100%).
 
